@@ -199,7 +199,15 @@ def main():
 
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
     if not api_key:
-        raise RuntimeError("Missing GEMINI_API_KEY environment variable. Put it in .env or set it in PowerShell.")
+        print("[Task 3] GEMINI_API_KEY not set. Skipping GenAI drafting.")
+        # still write an empty drafts.json so frontend works
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        EMAIL_DIR.mkdir(parents=True, exist_ok=True)
+        DRAFTS_JSON.write_text(json.dumps({
+            "summary": {"run_at": datetime.now(SGT).isoformat(), "input_items": 0, "drafted": 0, "errors": 0},
+            "items": []
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
+        return
 
     genai.configure(api_key=api_key)
 

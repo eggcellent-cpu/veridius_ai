@@ -1,6 +1,6 @@
 {
   "summary": {
-    "run_at": "2026-01-15T04:32:42.972152+08:00",
+    "run_at": "2026-01-15T04:44:36.824223+08:00",
     "input_items": 4,
     "drafted": 4,
     "errors": 0
@@ -9,18 +9,18 @@
     {
       "event_id": "2bfa5247d83255e4",
       "change_type": "NEW",
-      "generated_at": "2026-01-15T04:32:42.972152+08:00",
+      "generated_at": "2026-01-15T04:44:36.824223+08:00",
       "draft": {
-        "subject": "SCCCI: Annual Business Outlook Forum 2026 - Key Insights for Trade Associations",
-        "email_blurb": "Dear Secretariat, We invite you and your members to the SCCCI Annual Business Outlook Forum 2026, offering crucial economic insights for the year ahead. This forum, held on February 4, 2026, from 9:00 AM to 12:30 PM, is free for SCCCI members and $20 for non-members. Ensure your association's members gain a competitive edge by registering now.",
-        "whatsapp_text": "SCCCI Annual Business Outlook Forum 2026: Equip your members with crucial economic insights. Date: Feb 4, 2026 (9 AM - 12:30 PM). Free for SCCCI members, $20 for non-members. Register here: https://forms.office.com/r/w4ErtY32yV"
+        "subject": "Invitation: SCCCI Annual Business Outlook Forum 2026",
+        "email_blurb": "Dear Secretariat,\n\nWe invite you to the SCCCI Annual Business Outlook Forum 2026 on February 4, 2026. Gain critical insights into the economic landscape for the year ahead, free for members or $20.00 for non-members. Please register your attendance via the link below.",
+        "whatsapp_text": "SCCCI Annual Business Outlook Forum 2026: Feb 4, 9 AM - 12:30 PM. Gain vital insights for the year ahead. Free for members, $20 for non-members. Register now: https://forms.office.com/r/w4ErtY32yV"
       },
       "event": {
         "event_id": "2bfa5247d83255e4",
         "source": {
           "list_url": "https://www.sccci.org.sg/event/index",
           "event_url": "https://www.sccci.org.sg/event/detail?slug=annual-business-outlook-forum-2026",
-          "scraped_at": "2026-01-15T04:32:27.657579+08:00"
+          "scraped_at": "2026-01-15T04:44:22.140656+08:00"
         },
         "event": {
           "title": "Annual Business Outlook Forum 2026",
@@ -46,18 +46,18 @@
     {
       "event_id": "2330949af9fd4427",
       "change_type": "NEW",
-      "generated_at": "2026-01-15T04:32:42.972152+08:00",
+      "generated_at": "2026-01-15T04:44:36.824223+08:00",
       "draft": {
-        "subject": "SCCCI Tech Symposium 2026: Key Technology Insights for Your Members",
-        "email_blurb": "We invite you and your association members to the SCCCI Tech Symposium 2026, a two-day physical event designed to provide critical insights into emerging technology trends. Held on January 21-22, 2026, at the SCCCI Auditorium, members enjoy free admission while non-members pay a nominal fee. Secure your participation by registering through the link below.",
-        "whatsapp_text": "Invitation: SCCCI Tech Symposium 2026. Jan 21-22, 10 AM - 5 PM, SCCCI Auditorium. Explore critical tech trends. Free for SCCCI members, $20 for non-members. Physical attendance. Register now: https://www.sccci.org.sg/user/event/registerEvent/sccci-tech-symposium-2026"
+        "subject": "Invitation: SCCCI Tech Symposium 2026 (Jan 21-22)",
+        "email_blurb": "We invite you to the SCCCI Tech Symposium 2026, a key event for staying ahead in technological advancements. Join us on January 21-22 from 10:00 AM - 05:00 PM at the SCCCI Auditorium; SCCCI members attend for free, non-members at $20. Secure your spot now and register via the link below.",
+        "whatsapp_text": "SCCCI Tech Symposium 2026: Jan 21-22, 10 AM - 5 PM at SCCCI Auditorium. Explore key tech trends. Free for SCCCI members, $20 for non-members. Register here: https://www.sccci.org.sg/user/event/registerEvent/sccci-tech-symposium-2026"
       },
       "event": {
         "event_id": "2330949af9fd4427",
         "source": {
           "list_url": "https://www.sccci.org.sg/event/index",
           "event_url": "https://www.sccci.org.sg/event/detail?slug=sccci-tech-symposium-2026",
-          "scraped_at": "2026-01-15T04:32:30.591836+08:00"
+          "scraped_at": "2026-01-15T04:44:25.123371+08:00"
         },
         "event": {
           "title": "SCCCI Tech Symposium 2026",
@@ -83,18 +83,18 @@
     {
       "event_id": "0f21b8c3bf728618",
       "change_type": "NEW",
-      "generated_at": "2026-01-15T04:32:42.972152+08:00",
+      "generated_at": "2026-01-15T04:44:36.824223+08:00",
       "draft": {
-        "subject": "SCCCI: Unpacking Customer-centricity for Growth & Innovation (Free)",
-        "email_blurb": "SCCCI invites your secretariat and members to a complimentary session on 'Unpacking Customer-centricity for Growth and Innovation'. Discover actionable strategies to drive business growth and innovation by prioritising your customers. Register now to secure your free spot.",
-        "whatsapp_text": "SCCCI Event: Unpacking Customer-centricity for Growth & Innovation.\nDate: Nov 21, 2025 | Time: 10 AM - 12 PM.\nLearn key strategies for business growth. Free for all attendees. Share with your members.\nRegister now: https://forms.gle/9Lo7mw1wpqr9gjMS7"
+        "subject": "Free Event: Unpacking Customer-centricity for Growth & Innovation",
+        "email_blurb": "SCCCI invites you to a complimentary session on 'Unpacking Customer-centricity for Growth and Innovation'. Discover actionable strategies to enhance business growth and innovation, free for all attendees on November 21, 2025, 10:00 AM - 12:00 PM. Register now to secure your spot.",
+        "whatsapp_text": "Join SCCCI for a free session: Unpacking Customer-centricity for Growth & Innovation. Learn key strategies for business growth. Nov 21, 2025, 10 AM - 12 PM. Limited spots. Register now: https://forms.gle/9Lo7mw1wpqr9gjMS7"
       },
       "event": {
         "event_id": "0f21b8c3bf728618",
         "source": {
           "list_url": "https://www.sccci.org.sg/event/index",
           "event_url": "https://www.sccci.org.sg/event/detail?slug=unpacking-customer-centricity-for-growth-and-innovation",
-          "scraped_at": "2026-01-15T04:32:35.158702+08:00"
+          "scraped_at": "2026-01-15T04:44:29.514023+08:00"
         },
         "event": {
           "title": "Unpacking Customer-centricity for Growth and Innovation",
@@ -120,18 +120,18 @@
     {
       "event_id": "106103587420833e",
       "change_type": "NEW",
-      "generated_at": "2026-01-15T04:32:42.972152+08:00",
+      "generated_at": "2026-01-15T04:44:36.824223+08:00",
       "draft": {
-        "subject": "Expand Your Network: SCCCI Business Mission to China (Shanghai, Nanjing)",
-        "email_blurb": "Invite your members to join the SCCCI Business Mission to China (Shanghai, Nanjing) from 5-8 November 2025. This mission is designed to help businesses explore new market opportunities and forge key connections. Encourage your members to register now via the provided link.",
-        "whatsapp_text": "SCCCI Business Mission to China (Shanghai, Nanjing), 5-8 Nov 2025. A prime opportunity for your members to expand networks and explore market entry. Prices from $1500. Register by 15 Oct here: https://forms.office.com/Pages/ResponsePage.aspx?id=0d-BMLMU_keLH5R6y1w6fYQFtBvL9wJPkmLb-Nif8jNUNEdRSVVJNENSTUVWQ08zSFEwOVBXMDU1UC4u"
+        "subject": "SCCCI Business Mission to China (Shanghai, Nanjing) - Nov 2025",
+        "email_blurb": "Invite your members to the SCCCI Business Mission Trip to China (Shanghai, Nanjing) from November 5-8, 2025. This mission offers unique opportunities for market exploration and networking. Please encourage them to register by 15 October to secure their participation.",
+        "whatsapp_text": "SCCCI Mission to China (Shanghai, Nanjing). Nov 5-8, 2025. Market exploration & networking. Register by Oct 15: https://forms.office.com/Pages/ResponsePage.aspx?id=0d-BMLMU_keLH5R6y1w6fYQFtBvL9wJPkmLb-Nif8jNUNEdRSVVJNENSTUVWQ08zSFEwOVBXMDU1UC4u"
       },
       "event": {
         "event_id": "106103587420833e",
         "source": {
           "list_url": "https://www.sccci.org.sg/event/index",
           "event_url": "https://www.sccci.org.sg/event/detail?slug=sccci-business-mission-trip-to-china-shanghai-nanjing",
-          "scraped_at": "2026-01-15T04:32:39.759521+08:00"
+          "scraped_at": "2026-01-15T04:44:34.129670+08:00"
         },
         "event": {
           "title": "SCCCI Business Mission Trip to China\nShanghai, Nanjing",

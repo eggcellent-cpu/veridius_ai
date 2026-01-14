@@ -1,6 +1,6 @@
 {
   "summary": {
-    "run_at": "2026-01-15T04:32:41.042828+08:00",
+    "run_at": "2026-01-15T04:44:35.324540+08:00",
     "current_count": 9,
     "previous_count": 0,
     "new": 4,
@@ -16,7 +16,7 @@
         "source": {
           "list_url": "https://www.sccci.org.sg/event/index",
           "event_url": "https://www.sccci.org.sg/event/detail?slug=annual-business-outlook-forum-2026",
-          "scraped_at": "2026-01-15T04:32:27.657579+08:00"
+          "scraped_at": "2026-01-15T04:44:22.140656+08:00"
         },
         "event": {
           "title": "Annual Business Outlook Forum 2026",
@@ -46,7 +46,7 @@
         "source": {
           "list_url": "https://www.sccci.org.sg/event/index",
           "event_url": "https://www.sccci.org.sg/event/detail?slug=sccci-tech-symposium-2026",
-          "scraped_at": "2026-01-15T04:32:30.591836+08:00"
+          "scraped_at": "2026-01-15T04:44:25.123371+08:00"
         },
         "event": {
           "title": "SCCCI Tech Symposium 2026",
@@ -76,7 +76,7 @@
         "source": {
           "list_url": "https://www.sccci.org.sg/event/index",
           "event_url": "https://www.sccci.org.sg/event/detail?slug=unpacking-customer-centricity-for-growth-and-innovation",
-          "scraped_at": "2026-01-15T04:32:35.158702+08:00"
+          "scraped_at": "2026-01-15T04:44:29.514023+08:00"
         },
         "event": {
           "title": "Unpacking Customer-centricity for Growth and Innovation",
@@ -106,7 +106,7 @@
         "source": {
           "list_url": "https://www.sccci.org.sg/event/index",
           "event_url": "https://www.sccci.org.sg/event/detail?slug=sccci-business-mission-trip-to-china-shanghai-nanjing",
-          "scraped_at": "2026-01-15T04:32:39.759521+08:00"
+          "scraped_at": "2026-01-15T04:44:34.129670+08:00"
         },
         "event": {
           "title": "SCCCI Business Mission Trip to China\nShanghai, Nanjing",
