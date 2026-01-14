@@ -1,0 +1,16 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data outputs
+data/events_current.json
+data/events_previous.json
+data/events_delta.json
+
+# Playwright
+.playwright/
+
+.env

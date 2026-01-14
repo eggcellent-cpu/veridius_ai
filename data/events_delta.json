@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "run_at": "2026-01-15T04:32:41.042828+08:00",
+    "current_count": 9,
+    "previous_count": 0,
+    "new": 4,
+    "updated": 0,
+    "skipped_closed": 5
+  },
+  "items": [
+    {
+      "change_type": "NEW",
+      "event_id": "2bfa5247d83255e4",
+      "event": {
+        "event_id": "2bfa5247d83255e4",
+        "source": {
+          "list_url": "https://www.sccci.org.sg/event/index",
+          "event_url": "https://www.sccci.org.sg/event/detail?slug=annual-business-outlook-forum-2026",
+          "scraped_at": "2026-01-15T04:32:27.657579+08:00"
+        },
+        "event": {
+          "title": "Annual Business Outlook Forum 2026",
+          "datetime": {
+            "date_range": "February 04, 2026 - February 04, 2026",
+            "time_range": "09:00 AM - 12:30 PM"
+          },
+          "location": "",
+          "pricing": {
+            "member": "Free",
+            "non_member": "20.00"
+          },
+          "status": "Open"
+        },
+        "registration": {
+          "signup_link": "https://forms.office.com/r/w4ErtY32yV",
+          "provider": "Microsoft Forms"
+        },
+        "description_preview": "Annual Business Outlook Forum 2026 February 04, 2026 - February 04, 2026 (add to calendar) 09:00 AM - 12:30 PM Non-Member Price : $ 20.00 Member Price : Free Share Click Here To Register Join this event"
+      }
+    },
+    {
+      "change_type": "NEW",
+      "event_id": "2330949af9fd4427",
+      "event": {
+        "event_id": "2330949af9fd4427",
+        "source": {
+          "list_url": "https://www.sccci.org.sg/event/index",
+          "event_url": "https://www.sccci.org.sg/event/detail?slug=sccci-tech-symposium-2026",
+          "scraped_at": "2026-01-15T04:32:30.591836+08:00"
+        },
+        "event": {
+          "title": "SCCCI Tech Symposium 2026",
+          "datetime": {
+            "date_range": "January 21, 2026 - January 22, 2026",
+            "time_range": "10:00 AM - 05:00 PM"
+          },
+          "location": "SCCCI Auditorium, 47 Hill Street, Singapore 179365",
+          "pricing": {
+            "member": "Free",
+            "non_member": "20.00"
+          },
+          "status": "Open"
+        },
+        "registration": {
+          "signup_link": "https://www.sccci.org.sg/user/event/registerEvent/sccci-tech-symposium-2026",
+          "provider": "SCCCI Registration"
+        },
+        "description_preview": "SCCCI Tech Symposium 2026 January 21, 2026 - January 22, 2026 (add to calendar) 10:00 AM - 05:00 PM Location : SCCCI Auditorium, 47 Hill Street, Singapore 179365 Non-Member Price : $ 20.00 Member Price : Free Share * This is a physical attendance only event. * * If you encounter any issues with your registration, please reach out to Mr Chris Foo via chris@sccci.org.sg * For any other enquiries, please reach out to Mr Chris Foo via chris@sccci.org.sg . The event confirmation will be sent out 3 days prior to the event, if not earlier. in event of overwhelming response, priority will be given to SCCCI Members. ** There will not be any refund after sign-up, unless event is postponed/cancelled by organiser. Participation in Morning Session is mandatory for access to Afternoon Breakout Workshops"
+      }
+    },
+    {
+      "change_type": "NEW",
+      "event_id": "0f21b8c3bf728618",
+      "event": {
+        "event_id": "0f21b8c3bf728618",
+        "source": {
+          "list_url": "https://www.sccci.org.sg/event/index",
+          "event_url": "https://www.sccci.org.sg/event/detail?slug=unpacking-customer-centricity-for-growth-and-innovation",
+          "scraped_at": "2026-01-15T04:32:35.158702+08:00"
+        },
+        "event": {
+          "title": "Unpacking Customer-centricity for Growth and Innovation",
+          "datetime": {
+            "date_range": "November 21, 2025 - November 21, 2025",
+            "time_range": "10:00 AM - 12:00 PM"
+          },
+          "location": "",
+          "pricing": {
+            "member": "Free",
+            "non_member": "Free"
+          },
+          "status": "Open"
+        },
+        "registration": {
+          "signup_link": "https://forms.gle/9Lo7mw1wpqr9gjMS7",
+          "provider": "Google Forms"
+        },
+        "description_preview": "Unpacking Customer-centricity for Growth and Innovation November 21, 2025 - November 21, 2025 (add to calendar) 10:00 AM - 12:00 PM Non-Member Price : Free Member Price : Free Share Join this event"
+      }
+    },
+    {
+      "change_type": "NEW",
+      "event_id": "106103587420833e",
+      "event": {
+        "event_id": "106103587420833e",
+        "source": {
+          "list_url": "https://www.sccci.org.sg/event/index",
+          "event_url": "https://www.sccci.org.sg/event/detail?slug=sccci-business-mission-trip-to-china-shanghai-nanjing",
+          "scraped_at": "2026-01-15T04:32:39.759521+08:00"
+        },
+        "event": {
+          "title": "SCCCI Business Mission Trip to China\nShanghai, Nanjing",
+          "datetime": {
+            "date_range": "November 05, 2025 - November 08, 2025",
+            "time_range": "09:15 AM - 01:45 PM"
+          },
+          "location": "",
+          "pricing": {
+            "member": "1,500.00",
+            "non_member": "1,800.00"
+          },
+          "status": "Open"
+        },
+        "registration": {
+          "signup_link": "https://forms.office.com/Pages/ResponsePage.aspx?id=0d-BMLMU_keLH5R6y1w6fYQFtBvL9wJPkmLb-Nif8jNUNEdRSVVJNENSTUVWQ08zSFEwOVBXMDU1UC4u",
+          "provider": "Microsoft Forms"
+        },
+        "description_preview": "SCCCI Business Mission Trip to China Shanghai, Nanjing November 05, 2025 - November 08, 2025 (add to calendar) 09:15 AM - 01:45 PM Non-Member Price : $ 1,800.00 Member Price : $ 1,500.00 Share Register HERE by 15 October Join this event"
+      }
+    }
+  ]
+}

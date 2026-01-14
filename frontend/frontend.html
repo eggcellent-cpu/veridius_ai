@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SCCCI Event Email Drafts</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>SCCCI Event Email Drafts</h1>
+    <p class="sub">Shows NEW / UPDATED Open events from <code>events_delta.json</code> and GenAI drafts.</p>
+
+    <div class="row">
+      <button id="btnReload">Reload</button>
+      <span id="meta" class="meta"></span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Delta Summary</h2>
+      <pre id="summary" class="pre"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>Drafts</h2>
+      <div id="cards" class="cards"></div>
+      <div id="empty" class="empty hidden">No drafts found. (Run Task 3 after you have NEW/UPDATED Open events.)</div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
