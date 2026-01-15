@@ -11,7 +11,7 @@ SENT_FILE = "out/sent_emails.json"
 
 # Recipients for testing / production
 TEST_RECIPIENTS = [
-    "replace with real@gmail.com",
+    "missrach.lim@gmail.com",
     # "someone_else@example.com",
     # "another_person@example.com",
 ]
