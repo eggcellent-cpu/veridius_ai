@@ -5,6 +5,15 @@ const emptyEl = document.getElementById("empty");
 const metaEl = document.getElementById("meta");
 const btnReload = document.getElementById("btnReload");
 
+function copyWhatsApp(eventId) {
+  const el = document.getElementById(`wa-text-${eventId}`);
+  if (!el) return;
+
+  navigator.clipboard.writeText(el.innerText)
+    .then(() => alert("WhatsApp text copied!"))
+    .catch(err => alert("Failed to copy: " + err));
+}
+
 async function loadJSON(path) {
   const res = await fetch(path, { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
@@ -68,6 +77,12 @@ function cardHTML(item) {
     <div class="box">
       <div class="boxTitle">WhatsApp text</div>
       <div class="boxBody">${esc(whatsapp)}</div>
+      <div style="text-align: right;">
+        <button onclick="window.open('https://wa.me/?text=${encodeURIComponent(whatsapp)}', '_blank')" 
+                style="background:#25D366;color:#fff;border:none;padding:6px 10px;border-radius:6px;cursor:pointer;">
+          Share on WhatsApp
+        </button>
+      </div>
     </div>
   </div>`;
 }
