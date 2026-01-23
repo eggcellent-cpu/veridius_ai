@@ -14,6 +14,15 @@ function copyWhatsApp(eventId) {
     .catch(err => alert("Failed to copy: " + err));
 }
 
+function copyWhatsApp(eventId) {
+  const el = document.getElementById(`wa-text-${eventId}`);
+  if (!el) return;
+
+  navigator.clipboard.writeText(el.innerText)
+    .then(() => alert("WhatsApp text copied!"))
+    .catch(err => alert("Failed to copy: " + err));
+}
+
 async function loadJSON(path) {
   const res = await fetch(path, { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
