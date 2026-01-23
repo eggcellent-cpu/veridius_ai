@@ -113,6 +113,10 @@ def render_email_html(draft: dict, event: dict) -> str:
     non_member_price = pricing.get("non_member", "")
     signup_link = reg.get("signup_link", "")
 
+    media = event.get("media", {})
+    images = (media.get("images") or {}).get("items", [])
+    hero_img = images[0].get("url") if images else ""
+
     subject = (draft.get("subject") or "").strip()
     blurb = (draft.get("email_blurb") or "").strip()
 
@@ -128,6 +132,8 @@ def render_email_html(draft: dict, event: dict) -> str:
       <div style="font-size:13px;color:#666;margin-bottom:10px;">
         SCCCI Event Notice (Auto-drafted for approval)
       </div>
+
+    {f'<img src="{hero_img}" alt="" style="width:100%;border-radius:12px;margin:12px 0;object-fit:cover;" />' if hero_img else ''}
 
       <h1 style="margin:0 0 10px 0;font-size:22px;line-height:1.25;color:#111;">
         {title}

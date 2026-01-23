@@ -6,7 +6,7 @@ TASKS = [
     ("Task 2: Detect delta changes", "source/task2_detect_new_data.py"),
     # Add later:
     ("Task 3: Draft emails", "source/task3_draft_emails.py"),
-    # ("Task 4: Send/Export drafts", "source/task4_send_or_export.py"),
+    ("Task 4: Send/Export drafts", "source/task4_send_or_export.py"),
 ]
 
 def render_bar(done: int, total: int, width: int = 30) -> str:

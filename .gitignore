@@ -9,6 +9,7 @@ __pycache__/
 data/events_current.json
 data/events_previous.json
 data/events_delta.json
+out\sent_emails.json
 
 # Playwright
 .playwright/

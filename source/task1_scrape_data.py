@@ -2,6 +2,7 @@ import json
 import hashlib
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from urllib.parse import urljoin, urlparse, parse_qsl, urlencode, urlunparse
 import re
 
 from playwright.sync_api import sync_playwright
@@ -16,11 +17,16 @@ SGT = timezone(timedelta(hours=8))
 def make_id(url: str) -> str:
     return hashlib.sha256(url.encode("utf-8")).hexdigest()[:16]
 
-
 def normalize_url(href: str) -> str:
+    if not href:
+        return ""
+    if href.startswith("//"):
+        return "https:" + href
     if href.startswith("/"):
         return "https://www.sccci.org.sg" + href
-    return href
+    if href.startswith("http://") or href.startswith("https://"):
+        return href
+    return urljoin("https://www.sccci.org.sg/", href)
 
 # for extracting prices
 def extract_prices(soup):
@@ -59,6 +65,23 @@ def extract_prices(soup):
 
     return member_price, non_member_price
 
+# for extracting images
+def normalize_image_url(src: str, base_url: str) -> str:
+    """
+    - Converts relative -> absolute
+    - Removes common tracking params (optional)
+    - Keeps essential params like ?c=... if the site uses it
+    """
+    if not src:
+        return ""
+    abs_url = urljoin(base_url, src)
+
+    # Optional cleanup: drop utm_ params only
+    parsed = urlparse(abs_url)
+    q = parse_qsl(parsed.query, keep_blank_values=True)
+    q = [(k, v) for (k, v) in q if not k.lower().startswith("utm_")]
+    new_query = urlencode(q, doseq=True)
+    return urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params, new_query, parsed.fragment))
 
 # for extracting signup link
 def extract_signup_link(soup) -> str:
@@ -128,6 +151,56 @@ def infer_provider(signup_link: str) -> str:
         return "SCCCI Registration"
     return "Other"
 
+# scrape images function
+def extract_images(soup: BeautifulSoup, event_url: str) -> dict:
+    """
+    Returns nested dict:
+    {
+      "count": int,
+      "items": [{"url": "...", "alt": "...", "source": "main|content|any"}]
+    }
+    """
+    images = []
+    seen = set()
+
+    # Focus areas first (more likely relevant)
+    areas = [
+        ("main", soup.select_one(".main-container") or soup),
+        ("content", soup.select_one(".event-detail, .event-content, .event-description") or soup),
+    ]
+
+    def add_img(src: str, alt: str, source: str):
+        u = normalize_image_url(src, event_url)
+        if not u:
+            return
+        if u in seen:
+            return
+        seen.add(u)
+        images.append({
+            "url": u,
+            "alt": (alt or "").strip(),
+            "source": source,
+        })
+
+    # 1) normal <img src="...">
+    for source, area in areas:
+        for img in area.select("img"):
+            src = (img.get("src") or "").strip()
+            alt = (img.get("alt") or "").strip()
+            if not src:
+                continue
+            add_img(src, alt, source)
+
+    # 2) sometimes background-image in style=""
+    bg_imgs = soup.select('[style*="background-image"]')
+    for node in bg_imgs:
+        style = node.get("style", "")
+        m = re.search(r'background-image\s*:\s*url\(["\']?(.*?)["\']?\)', style, re.I)
+        if m:
+            add_img(m.group(1).strip(), "", "bg-style")
+
+    return {"count": len(images), "items": images}
+
 # scrape event detail page function
 def scrape_event_detail(page, event_url: str) -> dict:
     page.goto(event_url, timeout=60000)
@@ -171,9 +244,12 @@ def scrape_event_detail(page, event_url: str) -> dict:
     if signup_link == "#":
         signup_link = ""
 
-    # NEW: location + status
+    # location + status
     location = extract_location(soup)
     status = extract_status(soup)
+
+    # images
+    images = extract_images(soup, event_url)
 
     return {
         "event_id": make_id(event_url),
@@ -198,6 +274,9 @@ def scrape_event_detail(page, event_url: str) -> dict:
         "registration": {
             "signup_link": signup_link,
             "provider": infer_provider(signup_link),
+        },
+        "media": {
+            "images": images
         },
         "description_preview": desc,  # keep if you still want it for AI drafting
     }

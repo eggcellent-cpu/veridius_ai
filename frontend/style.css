@@ -55,6 +55,12 @@ button:hover{opacity:.9}
   font-family:var(--mono);
   font-size:12.5px;
 }
+/* Add this new rule */
+.hero {
+  max-width: 100%;
+  height: auto;
+  margin-top: 12px;
+}
 
 .cards{display:grid; gap:14px;}
 .card{

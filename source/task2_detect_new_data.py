@@ -34,6 +34,9 @@ def fingerprint(e: dict) -> dict:
     dt = event.get("datetime", {})
     pricing = event.get("pricing", {})
     reg = e.get("registration", {})
+    media = e.get("media", {})
+    images = (media.get("images") or {}).get("items", [])
+    image_urls = [img.get("url", "") for img in images if img.get("url")]
 
     return {
         "title": event.get("title", ""),
@@ -45,6 +48,7 @@ def fingerprint(e: dict) -> dict:
         "status": event.get("status", ""),
         "signup_link": reg.get("signup_link", ""),
         "provider": reg.get("provider", ""),
+        "image_urls": sorted(set(image_urls)),
     }
 
 

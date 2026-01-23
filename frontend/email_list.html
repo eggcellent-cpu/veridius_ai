@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Email Recipient List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      color: #333;
+    }
+
+    header.wrap {
+      background: none; 
+      color: #333;      
+      padding: 20px 30px;
+    }
+
+    header h1 {
+      margin: 0 0 5px 0;
+      font-size: 1.8rem;
+    }
+
+    header p.sub {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Black button style for the back link */
+    header .row a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #000000;      /* black/dark gray button */
+      color: #fff;           /* white text */
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    header .row a:hover {
+      background: #555;      /* lighter gray on hover */
+      color: #fff;
+    }
+
+    main.wrap {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    section.panel {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 25px;
+      border-left: 5px solid #1e90ff;
+    }
+
+    section.panel h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #1e272e;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border: 1px solid #dcdde1;
+      text-align: left;
+    }
+
+    th {
+      background: #1e90ff;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background: #f1f2f6;
+    }
+
+    input.email-input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: transparent;
+    }
+
+    input.select-row {
+      width: auto;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #1e90ff;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #3742fa;
+    }
+
+    .btn-secondary {
+      background: #dcdde1;
+      color: #2f3640;
+    }
+
+    .btn-secondary:hover {
+      background: #ced6e0;
+    }
+
+    .btn-danger {
+      background: #e74c3c;
+      color: #fff;
+    }
+
+    .btn-danger:hover {
+      background: #c0392b;
+    }
+
+    #msg {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .success {
+      color: #27ae60;
+    }
+
+    .error {
+      color: #e74c3c;
+    }
+
+    @media (max-width: 600px) {
+      th,
+      td {
+        font-size: 12px;
+      }
+
+      .btn {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrap">
+    <h1>Email Recipients</h1>
+    <p class="sub">Manage email recipients used by the automated Outlook sender.</p>
+
+    <img src="frontend\Screenshot_2026-01-16_162439-removebg-preview.png" alt="Company Logo" style="
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    height: 50px;
+    ">
+    <div class="row">
+      <a href="./frontend.html">← Back to Email Drafts</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Recipient Emails</h2>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="btnAdd">+ Add Email</button>
+        <button class="btn btn-primary" id="btnSave">💾 Save All</button>
+        <button class="btn btn-secondary" id="btnReload">🔄 Reload</button>
+        <button class="btn btn-danger" id="btnDeleteSelected">🗑 Delete Selected</button>
+      </div>
+
+      <div id="msg"></div>
+
+      <table id="emailTable">
+        <thead>
+          <tr>
+            <th style="width:40px;"><input type="checkbox" id="selectAll" title="Select All"></th>
+            <th>Email</th>
+            <th style="width:80px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Emails will be inserted here -->
+        </tbody>
+      </table>
+
+      <p class="hint">Click "Add Email" to insert a new email. Edit inline or delete rows. You can also select multiple rows and delete at once. After saving, all changes will be saved and applied.
+    </section>
+  </main>
+
+  <script>
+    const tableBody = document.querySelector("#emailTable tbody");
+    const msg = document.getElementById("msg");
+    const btnAdd = document.getElementById("btnAdd");
+    const btnSave = document.getElementById("btnSave");
+    const btnReload = document.getElementById("btnReload");
+    const btnDeleteSelected = document.getElementById("btnDeleteSelected");
+    const selectAllCheckbox = document.getElementById("selectAll");
+
+    function showMsg(text, cls) {
+      msg.className = cls;
+      msg.textContent = text;
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function createRow(email = "") {
+      const tr = document.createElement("tr");
+
+      // Checkbox column
+      const tdCheckbox = document.createElement("td");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.className = "select-row";
+      tdCheckbox.appendChild(checkbox);
+
+      // Email column
+      const tdEmail = document.createElement("td");
+      const input = document.createElement("input");
+      input.type = "text";
+      input.value = email;
+      input.className = "email-input";
+      tdEmail.appendChild(input);
+
+      // Actions column
+      const tdActions = document.createElement("td");
+      const btnDelete = document.createElement("button");
+      btnDelete.className = "btn btn-danger";
+      btnDelete.textContent = "Delete";
+      btnDelete.onclick = () => tr.remove();
+      tdActions.appendChild(btnDelete);
+
+      tr.appendChild(tdCheckbox);
+      tr.appendChild(tdEmail);
+      tr.appendChild(tdActions);
+
+      return tr;
+    }
+
+    async function loadRecipients() {
+      try {
+        const res = await fetch("/get_recipients", { cache: "no-store" });
+        const data = await res.json();
+        tableBody.innerHTML = "";
+        (data.emails || []).forEach(email => tableBody.appendChild(createRow(email)));
+        showMsg("Loaded recipients from server.", "success");
+      } catch (e) {
+        tableBody.innerHTML = "";
+        showMsg("Failed to load recipients.", "error");
+      }
+    }
+
+    btnAdd.onclick = () => {
+      tableBody.appendChild(createRow());
+    };
+
+    btnSave.onclick = async () => {
+      const emails = Array.from(tableBody.querySelectorAll("input.email-input"))
+        .map(i => i.value.trim())
+        .filter(Boolean);
+
+      const invalid = emails.filter(e => !isValidEmail(e));
+      if (invalid.length) {
+        showMsg("Invalid email(s): " + invalid.join(", "), "error");
+        return;
+      }
+
+      try {
+        const res = await fetch("/save_recipients", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ emails })
+        });
+        const data = await res.json();
+        showMsg(data.msg, data.status === "success" ? "success" : "error");
+      } catch (e) {
+        showMsg("Failed to save: " + e.message, "error");
+      }
+    };
+
+    btnReload.onclick = loadRecipients;
+
+    btnDeleteSelected.onclick = () => {
+      const selectedRows = tableBody.querySelectorAll("input.select-row:checked");
+      selectedRows.forEach(cb => cb.closest("tr").remove());
+    };
+
+    selectAllCheckbox.onclick = () => {
+      const checked = selectAllCheckbox.checked;
+      tableBody.querySelectorAll("input.select-row").forEach(cb => cb.checked = checked);
+    };
+
+    // initial load
+    loadRecipients();
+  </script>
+</body>
+
+</html>

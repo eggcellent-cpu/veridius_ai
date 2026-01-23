@@ -9,16 +9,27 @@
 <body>
   <header class="wrap">
     <h1>SCCCI Event Email Drafts</h1>
-    <p class="sub">Shows NEW / UPDATED Open events from <code>events_delta.json</code> and GenAI drafts.</p>
+    <p class="sub"></p>
+
+    <!-- Company logo on top right -->
+    <img src="frontend\Screenshot_2026-01-16_162439-removebg-preview.png" alt="Company Logo" style="
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    height: 50px; /* adjust as needed */
+    ">
 
     <div class="row">
       <button id="btnReload">Reload</button>
+      <a href="email_list.html">
+        <button style="margin-left:10px;">Manage Email Recipients</button>
+      </a>
       <span id="meta" class="meta"></span>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="panel">
+    <section class="panel" style="display:none;">
       <h2>Delta Summary</h2>
       <pre id="summary" class="pre"></pre>
     </section>
